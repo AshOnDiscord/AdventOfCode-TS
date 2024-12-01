@@ -1,15 +1,25 @@
 # adventofcode
 
-To install dependencies:
+Majority of util commands allow `--year` and `--day` flags to specify the year and day of the puzzle.
+
+To init and fetch:
 
 ```bash
-bun install
+bun fetch
 ```
 
-To run:
+To run the sample tests:
 
 ```bash
-bun run index.ts
+bun runner
 ```
 
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+To run the full tests:
+
+```bash
+bun runner-full
+```
+
+## Misc
+
+You can find orginal solutions for 2021-2023 here: https://github.com/AshOnDiscord/aoc
