@@ -10,7 +10,7 @@
   },
   "scripts": {
     "fetch": "bun run tools/fetcher.ts",
-    "runner": "bun test runner",
+    "runner": "bun test runner-semi",
     "runner-full": "bun test runner-full"
   }
 }
