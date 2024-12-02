@@ -28,14 +28,40 @@ console.log(`Data fetched`);
 
 const directory = `${flags.year}/day-${flags.day}`;
 
-Bun.write(Bun.file(`${directory}/input.txt`), input.trim());
-Bun.write(Bun.file(`${directory}/sample-1.txt`), "\n");
-Bun.write(Bun.file(`${directory}/sample-2.txt`), "\n");
-Bun.write(Bun.file(`${directory}/answer-1.txt`), "\n");
-Bun.write(Bun.file(`${directory}/answer-2.txt`), "\n");
-Bun.write(
-  Bun.file(`${directory}/index.ts`),
-  await Bun.file("./tools/template.ts")
-);
+const inputFile = `${directory}/input.txt`;
+const sampleFile1 = `${directory}/sample-1.txt`;
+const sampleFile2 = `${directory}/sample-2.txt`;
+const answerFile1 = `${directory}/answer-1.txt`;
+const answerFile2 = `${directory}/answer-2.txt`;
+const codePath = `${directory}/index.ts`;
+
+Bun.write(Bun.file(inputFile), input.trim());
+Bun.write(Bun.file(sampleFile1), "\n");
+Bun.write(Bun.file(sampleFile2), "\n");
+Bun.write(Bun.file(answerFile1), "\n");
+Bun.write(Bun.file(answerFile2), "\n");
+Bun.write(Bun.file(codePath), await Bun.file("./tools/template.ts"));
+
+Bun.openInEditor(codePath, {
+  editor: "vscode",
+  line: 2,
+  column: 3,
+});
+Bun.sleepSync(100);
+Bun.openInEditor(sampleFile2, {
+  editor: "vscode",
+});
+Bun.sleepSync(100);
+Bun.openInEditor(sampleFile1, {
+  editor: "vscode",
+});
+Bun.sleepSync(100);
+Bun.openInEditor(answerFile2, {
+  editor: "vscode",
+});
+Bun.sleepSync(100);
+Bun.openInEditor(answerFile1, {
+  editor: "vscode",
+});
 
 console.log(`Files written`);
