@@ -48,19 +48,19 @@ Bun.openInEditor(codePath, {
   column: 3,
 });
 Bun.sleepSync(100);
-Bun.openInEditor(sampleFile2, {
-  editor: "vscode",
-});
-Bun.sleepSync(100);
-Bun.openInEditor(sampleFile1, {
-  editor: "vscode",
-});
-Bun.sleepSync(100);
 Bun.openInEditor(answerFile2, {
   editor: "vscode",
 });
 Bun.sleepSync(100);
 Bun.openInEditor(answerFile1, {
+  editor: "vscode",
+});
+Bun.sleepSync(100);
+Bun.openInEditor(sampleFile2, {
+  editor: "vscode",
+});
+Bun.sleepSync(100);
+Bun.openInEditor(sampleFile1, {
   editor: "vscode",
 });
 

@@ -25,12 +25,15 @@ test("Part 1", async () => {
 });
 
 test("Part 2", async () => {
-  const input = await Bun.file(
-    `${flags.year}/day-${flags.day}/sample-2.txt`
-  ).text();
-  const answer = await Bun.file(
-    `${flags.year}/day-${flags.day}/answer-2.txt`
-  ).text();
+  // use p1 as a fallback for the input
+  const input =
+    (
+      await Bun.file(`${flags.year}/day-${flags.day}/sample-2.txt`).text()
+    ).trim() ||
+    (await Bun.file(`${flags.year}/day-${flags.day}/sample-1.txt`).text());
+  const answer = (
+    await Bun.file(`${flags.year}/day-${flags.day}/answer-2.txt`).text()
+  ).trim();
   if (input.trim() === "") {
     throw new Error("No input found");
   }
