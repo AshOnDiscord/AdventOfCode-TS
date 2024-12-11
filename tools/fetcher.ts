@@ -26,7 +26,7 @@ const input = await res.text();
 
 console.log(`Data fetched`);
 
-const directory = `${flags.year}/day-${flags.day}`;
+const directory = `${flags.year}/day-${flags.day.padStart(2, "0")}`;
 
 const inputFile = `${directory}/input.txt`;
 const sampleFile1 = `${directory}/sample-1.txt`;
